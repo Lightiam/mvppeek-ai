@@ -44,7 +44,14 @@ const Header = () => {
             </Button>
           </nav>
 
-          <Button variant="outline" size="icon">
+          <Button 
+            variant="outline" 
+            size="icon"
+            onClick={() => {
+              console.log("Bell button clicked!");
+              alert("Bell button works!");
+            }}
+          >
             <Bell className="h-4 w-4" />
           </Button>
 

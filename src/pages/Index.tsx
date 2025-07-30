@@ -81,11 +81,13 @@ const Index = () => {
   ];
 
   const handlePreview = (url: string, title?: string) => {
+    console.log("Preview button clicked", url, title);
     setPreviewUrl(url);
     setPreviewTitle(title || "MVP Preview");
   };
 
   const closePreview = () => {
+    console.log("Close preview clicked");
     setPreviewUrl(null);
     setPreviewTitle("");
   };
@@ -126,7 +128,13 @@ const Index = () => {
             
             {/* Load More */}
             <div className="text-center py-8">
-              <button className="inline-flex items-center px-6 py-3 bg-gradient-brand text-primary-foreground rounded-lg font-medium hover:shadow-glow transition-all duration-300 transform hover:scale-105">
+              <button 
+                className="inline-flex items-center px-6 py-3 bg-gradient-brand text-primary-foreground rounded-lg font-medium hover:shadow-glow transition-all duration-300 transform hover:scale-105"
+                onClick={() => {
+                  console.log("Load more button clicked!");
+                  alert("Load more button works!");
+                }}
+              >
                 Load More MVPs
               </button>
             </div>

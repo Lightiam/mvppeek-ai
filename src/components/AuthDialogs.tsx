@@ -3,7 +3,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from 
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
-import { Plus, Link, Tag, User, Mail, Lock } from "lucide-react";
+import { Plus, LinkIcon, Tag, User, Mail, Lock } from "lucide-react";
 import { useState } from "react";
 
 const SubmitMvpDialog = () => {
@@ -11,7 +11,7 @@ const SubmitMvpDialog = () => {
   
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // This will need backend integration
+    console.log("Submit MVP form submitted");
     alert("MVP submission requires backend setup. Please connect Supabase to enable this feature.");
     setIsOpen(false);
   };
@@ -58,7 +58,7 @@ const SubmitMvpDialog = () => {
             
             <div>
               <label className="text-sm font-medium text-foreground mb-2 block">
-                <Link className="h-4 w-4 inline mr-2" />
+                <LinkIcon className="h-4 w-4 inline mr-2" />
                 MVP URL *
               </label>
               <Input
@@ -151,7 +151,7 @@ const AuthDialog = () => {
   
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // This will need backend integration
+    console.log("Auth form submitted");
     alert("Authentication requires backend setup. Please connect Supabase to enable login/signup.");
     setIsOpen(false);
   };

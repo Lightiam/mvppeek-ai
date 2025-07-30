@@ -40,11 +40,13 @@ const MvpCard = ({ mvp, onPreview }: MvpCardProps) => {
   const [upvotes, setUpvotes] = useState(mvp.upvotes);
 
   const handleUpvote = () => {
+    console.log("Upvote button clicked");
     setIsUpvoted(!isUpvoted);
     setUpvotes(isUpvoted ? upvotes - 1 : upvotes + 1);
   };
 
   const handleLike = () => {
+    console.log("Like button clicked");
     setIsLiked(!isLiked);
   };
 
