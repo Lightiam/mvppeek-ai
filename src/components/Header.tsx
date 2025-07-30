@@ -1,14 +1,15 @@
 import { Button } from "@/components/ui/button";
-import { Search, Bell, User, TrendingUp, Trophy, Star } from "lucide-react";
+import { Search, Bell, User, TrendingUp, Trophy, Star, BookOpen } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { SubmitMvpDialog, AuthDialog } from "@/components/AuthDialogs";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-xl">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         {/* Logo & Brand */}
-        <div className="flex items-center space-x-2">
+        <Link to="/" className="flex items-center space-x-2">
           <div className="bg-gradient-brand p-2 rounded-lg">
             <TrendingUp className="h-6 w-6 text-primary-foreground" />
           </div>
@@ -18,7 +19,7 @@ const Header = () => {
             </h1>
             <p className="text-xs text-muted-foreground">Startup Discovery Platform</p>
           </div>
-        </div>
+        </Link>
 
         {/* Search Bar */}
         <div className="flex-1 max-w-2xl mx-8">
@@ -42,6 +43,12 @@ const Header = () => {
               <Star className="h-4 w-4 mr-2" />
               Featured
             </Button>
+            <Link to="/blog">
+              <Button variant="ghost" size="sm" className="text-sm">
+                <BookOpen className="h-4 w-4 mr-2" />
+                Blog
+              </Button>
+            </Link>
           </nav>
 
           <Button 
