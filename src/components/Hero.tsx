@@ -38,8 +38,8 @@ const Hero = () => {
 
           {/* Subtitle */}
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed animate-fade-in">
-            The only platform where you can preview, rank, and discover startup MVPs 
-            without leaving the page. Join thousands of founders and early adopters.
+            The only validated platform where you can preview, rank, and discover startup MVPs 
+            without leaving the page. Join thousands of validated founders and early adopters.
           </p>
 
           {/* CTA Buttons */}
