@@ -109,6 +109,7 @@ const Index = () => {
                 url={previewUrl}
                 title={previewTitle}
                 onClose={closePreview}
+                onPreview={(url) => handlePreview(url, "External Site")}
               />
             )}
             

@@ -7,9 +7,10 @@ interface InlinePreviewProps {
   url: string;
   title: string;
   onClose: () => void;
+  onPreview?: (url: string) => void;
 }
 
-const InlinePreview = ({ url, title, onClose }: InlinePreviewProps) => {
+const InlinePreview = ({ url, title, onClose, onPreview }: InlinePreviewProps) => {
   const [isFullscreen, setIsFullscreen] = useState(false);
 
   const createSecureIframe = () => {
@@ -60,8 +61,9 @@ const InlinePreview = ({ url, title, onClose }: InlinePreviewProps) => {
           <Button
             variant="ghost"
             size="icon"
-            onClick={() => window.open(url, '_self')}
+            onClick={() => onPreview(url)}
             className="h-8 w-8"
+            title="Open in new preview window"
           >
             <ExternalLink className="h-4 w-4" />
           </Button>
@@ -100,10 +102,11 @@ const InlinePreview = ({ url, title, onClose }: InlinePreviewProps) => {
           <Button
             variant="hero"
             size="sm"
-            onClick={() => window.open(url, '_self')}
+            onClick={() => onPreview ? onPreview(url) : window.open(url, '_blank')}
+            title="Open in new tab (external)"
           >
             <ExternalLink className="h-4 w-4 mr-2" />
-            Open Full Site
+            Open Externally
           </Button>
         </div>
       </div>

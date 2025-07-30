@@ -156,10 +156,10 @@ const MvpCard = ({ mvp, onPreview }: MvpCardProps) => {
             <Button
               variant="outline"
               size="sm"
-              onClick={() => window.open(mvp.url, '_self')}
+              onClick={() => onPreview(mvp.url)}
             >
               <ExternalLink className="h-4 w-4 mr-2" />
-              Visit
+              View in Preview
             </Button>
           </div>
 

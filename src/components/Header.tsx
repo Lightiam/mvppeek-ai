@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Search, Bell, User, TrendingUp, Trophy, Star } from "lucide-react";
 import { Input } from "@/components/ui/input";
+import { SubmitMvpDialog, AuthDialog } from "@/components/AuthDialogs";
 
 const Header = () => {
   return (
@@ -47,13 +48,9 @@ const Header = () => {
             <Bell className="h-4 w-4" />
           </Button>
 
-          <Button variant="hero" size="sm">
-            Submit MVP
-          </Button>
+          <SubmitMvpDialog />
 
-          <Button variant="outline" size="icon">
-            <User className="h-4 w-4" />
-          </Button>
+          <AuthDialog />
         </div>
       </div>
     </header>
