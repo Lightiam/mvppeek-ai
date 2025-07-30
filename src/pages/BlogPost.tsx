@@ -5,7 +5,7 @@ import { BlogPost as BlogPostType } from '@/types/blog';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Calendar, Clock, ArrowLeft, Edit, Trash2 } from 'lucide-react';
+import { Calendar, Clock, ArrowLeft, Edit, Trash2, Home } from 'lucide-react';
 import { format } from 'date-fns';
 import { useToast } from '@/hooks/use-toast';
 
@@ -121,11 +121,17 @@ const BlogPost = () => {
   return (
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-8 max-w-4xl">
-        {/* Back button */}
-        <Link to="/blog" className="inline-flex items-center text-muted-foreground hover:text-foreground mb-8 transition-colors">
-          <ArrowLeft className="w-4 h-4 mr-2" />
-          Back to Blog
-        </Link>
+        {/* Navigation */}
+        <div className="flex items-center gap-4 mb-8">
+          <Link to="/" className="text-muted-foreground hover:text-foreground transition-colors">
+            <Home className="w-4 h-4" />
+          </Link>
+          <span className="text-muted-foreground">/</span>
+          <Link to="/blog" className="inline-flex items-center text-muted-foreground hover:text-foreground transition-colors">
+            <ArrowLeft className="w-4 h-4 mr-2" />
+            Back to Blog
+          </Link>
+        </div>
 
         {/* Post header */}
         <header className="mb-8">

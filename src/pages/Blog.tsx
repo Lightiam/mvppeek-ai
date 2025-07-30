@@ -7,7 +7,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Calendar, Clock, User, Search, Plus } from 'lucide-react';
+import { Calendar, Clock, User, Search, Plus, Home } from 'lucide-react';
 import { format } from 'date-fns';
 
 const Blog = () => {
@@ -55,11 +55,16 @@ const Blog = () => {
       <div className="border-b border-border bg-card">
         <div className="container mx-auto px-4 py-8">
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
-            <div>
-              <h1 className="text-4xl font-bold text-foreground mb-2">Blog</h1>
-              <p className="text-muted-foreground text-lg">
-                Insights, tutorials, and stories from our community
-              </p>
+            <div className="flex items-center gap-4">
+              <Link to="/" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Home className="w-5 h-5" />
+              </Link>
+              <div>
+                <h1 className="text-4xl font-bold text-foreground mb-2">Blog</h1>
+                <p className="text-muted-foreground text-lg">
+                  Insights, tutorials, and stories from our community
+                </p>
+              </div>
             </div>
             <Link to="/blog/create">
               <Button className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-brand">
